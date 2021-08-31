@@ -3,6 +3,11 @@ const path = require("path");
 module.exports = {
   entry: {
     main: ["core-js/stable", "regenerator-runtime/runtime", "./src/app.js"],
+    // main: [
+    //   "core-js/stable",
+    //   "regenerator-runtime/runtime",
+    //   "./src/playground/redux-expensify.js",
+    // ],
   },
   output: {
     path: path.resolve(__dirname, "public_html/"),
@@ -23,12 +28,8 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [
-           "style-loader",
-           "css-loader",
-           "sass-loader"
-        ]
-      }
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
   devServer: {
@@ -40,7 +41,7 @@ module.exports = {
     historyApiFallback: true,
     compress: true,
     port: 8080,
-    hot: true
+    hot: true,
   },
   devtool: "eval-cheap-module-source-map",
 };
