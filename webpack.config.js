@@ -6,7 +6,7 @@ module.exports = {
     // main: [
     //   "core-js/stable",
     //   "regenerator-runtime/runtime",
-    //   "./src/playground/redux-expensify.js",
+    //   "./src/playground/hoc.js",
     // ],
   },
   output: {
