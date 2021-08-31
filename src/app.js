@@ -19,9 +19,11 @@ const unsubscribe = store.subscribe(() => {
   console.log(visibleExpenses);
 });
 
-
-
 ReactDOM.render(<AppRouter />, document.getElementById("app"));
+
+//Test actions
+//============
+
 
 const expenseOne = store.dispatch(
   addExpense({ description: "rent", amount: "100", createdAt: 1000 })
