@@ -15,3 +15,9 @@ Clone repo from github:  https://github.com/StuLast/react-expenses-app
 
 3. Run webpack build for production
 ```npm run build```
+
+##  Test sutie
+
+1.  To run the test suite
+```npm test -- --watch``` - for automated testing whilst developing
+```npm test``` - for one of testing and CI/CD pipelines
