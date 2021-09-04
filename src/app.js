@@ -4,8 +4,7 @@ import { Provider } from "react-redux";
 
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import { addExpense,  removeExpense,  editExpense } from "./actions/expenses";
-import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from "./actions/filters";
+import { addExpense } from "./actions/expenses";
 
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
@@ -38,16 +37,4 @@ const expenseThree = store.dispatch(
 
 
 
-store.dispatch(sortByDate());
 
-store.dispatch(setStartDate(125));
-store.dispatch(setStartDate());
-store.dispatch(setEndDate(1250));
-store.dispatch(setEndDate());
-
-store.dispatch(sortByAmount());
-
-
-setTimeout(()=> {
-  store.dispatch(setTextFilter("bill"));
-}, 3000)
