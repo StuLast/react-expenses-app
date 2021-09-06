@@ -8,11 +8,12 @@ import { addExpense } from "./actions/expenses";
 
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
+import "react-dates/lib/css/_datepicker.css";
 
 const store = configureStore();
 
 const jsx = (
-  <Provider store = {store}>
+  <Provider store={store}>
     <AppRouter />
   </Provider>
 );
@@ -22,9 +23,8 @@ ReactDOM.render(jsx, document.getElementById("app"));
 //Test actions
 //============
 
-
 const expenseOne = store.dispatch(
-  addExpense({ description: "rent", amount: "1095", createdAt: 4500})
+  addExpense({ description: "rent", amount: "1095", createdAt: 4500 })
 );
 
 const expenseTwo = store.dispatch(
@@ -34,7 +34,3 @@ const expenseTwo = store.dispatch(
 const expenseThree = store.dispatch(
   addExpense({ description: "water bill", amount: "5000", createdAt: 109500 })
 );
-
-
-
-
