@@ -4,6 +4,7 @@
   "description": "React Expensify App Demo",
   "main": "app.js",
   "scripts": {
+    "start": "node server/server.js",
     "serve": "live-server public_html/",
     "dev-server": "webpack serve --open --mode development",
     "build:dev": "webpack --mode development --env development",
