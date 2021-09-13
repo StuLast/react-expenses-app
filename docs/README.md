@@ -10,16 +10,13 @@ React.js Indecision App Demo
 1.  Before running any builds or dev servers, you'll need to update the node-sass module for you dev system:
 ```npm rebuild node-sass```
 
-2. Run web server emulation (non-webpack):  
-```npm run serve```
-
-3. Run local dev server:
+2. Run local dev server:
 ```npm run dev-server```
 
-4. Run local production build (for code/filesize review):
+3. Run local production build (for code/filesize review):
 ```npm run build:dev```
 
-5. Run webpack build for production:
+4. Run webpack build for production:
 ```npm run build:prod```
 
 ##  Test Suite

@@ -4,13 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (env) => {
   const isProduction = env.production;
  
-  
   return {
     entry: {
       main: ["core-js/stable", "regenerator-runtime/runtime", "./src/app.js"],
     },
     output: {
-      path: path.resolve(__dirname, "public_html/"),
+      path: path.resolve(__dirname, "public_html", "dist"),
       filename: "[name]-bundle.js",
     },
     module: {
@@ -48,11 +47,18 @@ module.exports = (env) => {
     },
     plugins: [new MiniCssExtractPlugin({filename: 'styles.css'})],
     devServer: {
-      static: {
-        directory: path.join(__dirname, "public_html/"),
-        watch: true,
-        publicPath: "/",
-      },
+      static: [
+        {
+          directory: path.join(__dirname, "public_html"),
+          watch: true,
+          publicPath: "/",
+        },
+        {
+          directory: path.join(__dirname, "public_html", "dist"),
+          watch: true,
+          publicPath: "/dist/",
+        },
+      ],
       historyApiFallback: true,
       compress: true,
       port: 8080,
