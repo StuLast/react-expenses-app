@@ -25,4 +25,4 @@ React.js Indecision App Demo
 
 ## License
 
-This app is currently covered by the MIT license.  Visit <a href="/react-expenses-app/LICENSE"> LICENSE </a> for more info.
+This app is currently covered by the MIT license.  Visit <a href="/react-expenses-app/LICENSE.md"> LICENSE </a> for more info.
