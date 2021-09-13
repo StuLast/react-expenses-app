@@ -4,7 +4,8 @@
   "description": "React Expensify App Demo",
   "main": "app.js",
   "scripts": {
-    "serve": "webpack serve --open --mode development",
+    "serve": "live-server public_html/",
+    "dev-server": "webpack serve --open --mode development",
     "build:dev": "webpack --mode development --env development",
     "build:prod": "webpack --mode production --env production",
     "test": "jest --config=jest.config.json"
@@ -53,6 +54,10 @@
     "validator": "^13.6.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0"
+    "webpack-dev-server": "^4.0.0",
+    "mini-css-extract-plugin": "^2.3.0"
+  },
+  "dependencies": {
+    
   }
 }
