@@ -12,6 +12,10 @@
     "test": "jest --config=jest.config.json",
     "heroku-postbuild": "npm run build:prod"
   },
+  "engines": {
+    "node": "^15.14.0",
+    "npm": "^7.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StuLast/react-expenses-demo-app.git"
