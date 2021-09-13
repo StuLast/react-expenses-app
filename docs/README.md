@@ -10,7 +10,7 @@ React.js Indecision App Demo
 1.  Before running any builds or dev servers, you'll need to update the node-sass module for you dev system:
 ```npm rebuild node-sass```
 
-2. Run local dev server:
+2. Run local dev server:  (You'll need to do a workaround for the moment, to build a dist folder in the public_html.  See step 4).
 ```npm run dev-server```
 
 3. Run local production build (for code/filesize review):
