@@ -3,8 +3,8 @@ React.js Indecision App Demo
 
 ##  Pre-requisites.
 
-Install Node.JS
-Clone repo from github:  [https://github.com/StuLast/react-expenses-app]
+ - Install Node.JS
+ - Clone repo from github:  [https://github.com/StuLast/react-expenses-app]
 
 ##  Development Setup
 1.  Before running any builds or dev servers, you'll need to update the node-sass module for you dev system.
@@ -25,4 +25,4 @@ Clone repo from github:  [https://github.com/StuLast/react-expenses-app]
 
 ## License
 
-This app is currently covered by the MIT license.  Visit <a href="/LICENSE"> LICENSE </a> for more info.
+This app is currently covered by the MIT license.  Visit <a href="/react-expenses-app/LICENSE"> LICENSE </a> for more info.
