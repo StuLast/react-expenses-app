@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import moment from 'moment';
 import ExpenseForm from '../../components/ExpenseForm';
 import expenses from '../fixtures/expenses';
 
@@ -86,7 +87,6 @@ describe('Expense Form function prop calls', () => {
   
   it('should be called with args', () => {
     const onSubmitSpy = jest.fn();
-    console.log('Expenses object to be passed in', expenses[2]);
     const wrapper = shallow(<ExpenseForm expense={expenses[2]} onSubmit={onSubmitSpy} />);
     expect(wrapper).toMatchSnapshot();
     wrapper.find('form').simulate('submit', {
@@ -100,6 +100,24 @@ describe('Expense Form function prop calls', () => {
         note: expenses[2].note,
         createdAt: expenses[2].createdAt
       });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should set new date on date change', () => {
+    const now = moment();
+    const wrapper = shallow(<ExpenseForm />);
+    expect(wrapper).toMatchSnapshot();
+    wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
+    expect(wrapper.state('createdAt')).toEqual(now);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should set calendar focuses on onFocusChange', () => {
+    const focused = true;
+    const wrapper = shallow(<ExpenseForm />);
+    expect(wrapper).toMatchSnapshot();
+    wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({ focused });
+    expect(wrapper.state('calendarFocused')).toBe(true);
     expect(wrapper).toMatchSnapshot();
   });
   

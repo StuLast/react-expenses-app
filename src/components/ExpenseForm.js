@@ -23,9 +23,7 @@ class ExpenseForm extends React.Component {
 
   onNoteChange = (e) => {
     const note = e.target.value;
-    console.log('Note value passed in:',note);
     this.setState(() => ({ note }));
-    console.log('Note value in state:', this.state.note);
   };
 
   onAmountChange = (e) => {
@@ -51,7 +49,6 @@ class ExpenseForm extends React.Component {
       this.setState(() => ({error: 'Please provide description and amount'}));
     } else {
       this.setState(()=> ({error: ""}));
-      console.log('State at onSubmit', this.state);
       this.props.onSubmit({
         description:  this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
