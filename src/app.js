@@ -20,17 +20,4 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById("app"));
 
-//Test actions
-//============
 
-const expenseOne = store.dispatch(
-  addExpense({ description: "rent", amount: "1095", createdAt: 4500 })
-);
-
-const expenseTwo = store.dispatch(
-  addExpense({ description: "gas bill", amount: "300", createdAt: 1000 })
-);
-
-const expenseThree = store.dispatch(
-  addExpense({ description: "water bill", amount: "5000", createdAt: 109500 })
-);
