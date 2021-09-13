@@ -6,13 +6,13 @@ const setTextFilter = (text = "") => ({
 });
 
 //SORT_BY_AMOUNT
-const sortByAmount = () => ({
+const setSortByAmount = () => ({
   type: "SORT_BY",
   sortBy: "amount",
 });
 
 //SORT_BY_DATE
-const sortByDate = () => ({
+const setSortByDate = () => ({
   type: "SORT_BY",
   sortBy: "date",
 });
@@ -31,8 +31,8 @@ const setEndDate = (endDate) => ({
 
 export {
   setTextFilter,
-  sortByAmount,
-  sortByDate,
+  setSortByAmount,
+  setSortByDate,
   setStartDate,
   setEndDate
 }

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddExpensePage Rendering:  should render the AddExpense page correctly 1`] = `
+<div>
+  <h1>
+     Add Expense 
+  </h1>
+  <ExpenseForm
+    buttonText="Add Expense"
+    onSubmit={[Function]}
+  />
+</div>
+`;
+
+exports[`AddExpensePage UI Testing:  should handle onSubmit 1`] = `
+<div>
+  <h1>
+     Add Expense 
+  </h1>
+  <ExpenseForm
+    buttonText="Add Expense"
+    onSubmit={[Function]}
+  />
+</div>
+`;
+
+exports[`AddExpensePage UI Testing:  should handle onSubmit 2`] = `
+<div>
+  <h1>
+     Add Expense 
+  </h1>
+  <ExpenseForm
+    buttonText="Add Expense"
+    onSubmit={[Function]}
+  />
+</div>
+`;

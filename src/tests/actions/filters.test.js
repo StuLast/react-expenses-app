@@ -2,8 +2,8 @@
 import moment from 'moment';
 import {
   setTextFilter, 
-  sortByDate, 
-  sortByAmount,   
+  setSortByDate, 
+  setSortByAmount,   
   setStartDate, 
   setEndDate
 } from '../../actions/filters';
@@ -30,7 +30,7 @@ describe('Generate date filter actions', () => {
 
 describe('Generate sort actions', ()=> {
   it('should generate SORT_BY_DATE action object', () => {
-    const action = sortByDate();
+    const action = setSortByDate();
     expect(action).toEqual({
       type: "SORT_BY",
       sortBy: "date"
@@ -38,7 +38,7 @@ describe('Generate sort actions', ()=> {
   });
 
   it('should generate SORT_BY_AMOUNT action object', () => {
-    const action = sortByAmount();
+    const action = setSortByAmount();
     expect(action).toEqual({
       type: "SORT_BY",
       sortBy: "amount"
