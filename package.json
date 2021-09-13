@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StuLast/react-expensidy-app-demo.git"
+    "url": "git+https://github.com/StuLast/react-expenses-app.git"
   },
   "author": "Stu Last",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StuLast/react-expensify-app-demo/issues"
+    "url": "https://github.com/StuLast/react-expenses-app.git/issues"
   },
-  "homepage": "https://github.com/StuLast/react-expensiy-app-demo#readme",
+  "homepage": "https://github.com/StuLast/react-expenses-app.git#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
