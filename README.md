@@ -20,4 +20,5 @@ Clone repo from github:  https://github.com/StuLast/react-expenses-app
 
 1.  To run the test suite
 ```npm test -- --watch``` - for automated testing whilst developing
+```npm test -- --watch --verbose``` - for automated testing whilst developing but with each test listed in output
 ```npm test``` - for one of testing and CI/CD pipelines

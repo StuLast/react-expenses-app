@@ -1,0 +1,69 @@
+import expensesReducer from '../../reducers/expenses';
+import expenses from '../fixtures/expenses';
+
+describe('Reducer Setup', () => {
+
+  it('should set default state', () => {
+    const state = expensesReducer(undefined, '@@INIT');
+    expect(state).toEqual([]);
+  });
+
+});
+
+describe('Adding expenses', () =>  {
+
+  it('should add an expense', () => {
+    const expense = {
+      id: '109',
+      description: "Mortgage",
+      note: '',
+      amount: 479500,
+      createdAt: 20000
+    }
+    const action = {type: "ADD_EXPENSE", expense}
+    const state = expensesReducer(expenses, action);
+
+    expect(state).toEqual([...expenses, expense]);
+  });
+
+});
+
+describe("Editing Expenses", () => {
+
+  it('should edit an expense', () => {
+    const updates = { description: "Vehicle Rental",}
+    const action = {type: "EDIT_EXPENSE", id: expenses[1].id, updates};
+    const state = expensesReducer(expenses, action);
+    expect(state[1].description).toBe(updates.description);
+  });
+
+  it('should not edit an expense if expense not found', () => {
+    const updates = { description: "Vehicle Rental",}
+    const action = {type: "EDIT_EXPENSE", id: -1, updates};
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual(expenses);
+  });
+});
+
+describe("Remove Expenses", () => {
+
+  it('should remove expense by ID', () => {
+    const action = {
+      type: "REMOVE_EXPENSE",
+      id: expenses[1].id
+    };
+
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual([expenses[0], expenses[2]]);
+  });
+
+  it('should not remove expense if ID not found', () => {
+    const action = {
+      type: "REMOVE_EXPENSE",
+      id: 'Brian'
+    };
+
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual(expenses);
+  });
+});

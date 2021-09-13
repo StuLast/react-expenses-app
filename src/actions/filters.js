@@ -7,13 +7,13 @@ const setTextFilter = (text = "") => ({
 
 //SORT_BY_AMOUNT
 const sortByAmount = () => ({
-  type: "SORT_BY_AMOUNT",
+  type: "SORT_BY",
   sortBy: "amount",
 });
 
 //SORT_BY_DATE
 const sortByDate = () => ({
-  type: "SORT_BY_DATE",
+  type: "SORT_BY",
   sortBy: "date",
 });
 
