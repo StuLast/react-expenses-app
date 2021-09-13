@@ -13,8 +13,11 @@ React.js Indecision App Demo
 2. Run local dev server
 ```npm run serve```
 
-3. Run webpack build for production
-```npm run build```
+2. Run local production build (for code/filesize review)
+```npm run build:dev```
+
+4. Run webpack build for production
+```npm run build:prod```
 
 ##  Test Suite
 
