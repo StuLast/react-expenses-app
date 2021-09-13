@@ -64,12 +64,14 @@ describe('ExpenseListFilters UI calls functions correctly', () => {
   it('should handle date changes', () => {
     const startDate = moment(0).add(4, 'years');
     const endDate = moment(0).add(4, 'years');
-    wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange', { startDate, endDate });
+    wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange')({ startDate, endDate });
     expect(setStartDate).toHaveBeenLastCalledWith(startDate);
     expect(setEndDate).toHaveBeenLastCalledWith(endDate);
   })
 
   it('should handle date focus changes', () => {
-    
+    const calendarFocused = 'endDate';
+    wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocused);
+    expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
   })
 })
