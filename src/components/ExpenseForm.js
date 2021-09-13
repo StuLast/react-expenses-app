@@ -9,7 +9,7 @@ class ExpenseForm extends React.Component {
     this.state = {
       description: props.expense ? props.expense.description: "",
       note: props.expense ? props.expense.note: "", 
-      amount: props.expense ? (props.expense.amount / 100).toString(): 0,
+      amount: props.expense ? (props.expense.amount / 100).toString(): "",
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: "",
@@ -23,7 +23,9 @@ class ExpenseForm extends React.Component {
 
   onNoteChange = (e) => {
     const note = e.target.value;
+    console.log('Note value passed in:',note);
     this.setState(() => ({ note }));
+    console.log('Note value in state:', this.state.note);
   };
 
   onAmountChange = (e) => {
@@ -49,11 +51,12 @@ class ExpenseForm extends React.Component {
       this.setState(() => ({error: 'Please provide description and amount'}));
     } else {
       this.setState(()=> ({error: ""}));
+      console.log('State at onSubmit', this.state);
       this.props.onSubmit({
         description:  this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),
-        note: this.state.notesdfds
+        note: this.state.note
       })
     }
   };

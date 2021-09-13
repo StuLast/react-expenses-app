@@ -8,7 +8,7 @@ exports[`Render ExpenseList component should render ExpenseList with expenses 1`
     description="Gum"
     id="1"
     key="1"
-    note=""
+    note="Mmmm - Chewy"
   />
   <ExpenseListItem
     amount={109500}
@@ -24,7 +24,7 @@ exports[`Render ExpenseList component should render ExpenseList with expenses 1`
     description="Credit Card"
     id="3"
     key="3"
-    note=""
+    note="How much???"
   />
 </div>
 `;
