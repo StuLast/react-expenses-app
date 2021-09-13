@@ -10,14 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StuLast/react-expenses-app.git"
+    "url": "git+https://github.com/StuLast/react-expenses-demo-app.git"
   },
   "author": "Stu Last",
-  "license": "MIT",
+  "license": "SEE LICENSE IN docs/LICENSE.md",
+  "private": true,
   "bugs": {
-    "url": "https://github.com/StuLast/react-expenses-app.git/issues"
+    "url": "https://github.com/StuLast/react-expenses-demo-app.git/issues"
   },
-  "homepage": "https://github.com/StuLast/react-expenses-app.git#readme",
+  "homepage": "https://github.com/StuLast/react-expenses-demo-app.git/docs/#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
