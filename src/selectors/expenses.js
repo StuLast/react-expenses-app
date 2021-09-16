@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { createElement } from 'react';
+
 //Get Visible Expenses
 
 const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
