@@ -106,3 +106,6 @@ dist
 # Build files
 public_html/dist/
 
+# env files
+.env.development
+.env.test
