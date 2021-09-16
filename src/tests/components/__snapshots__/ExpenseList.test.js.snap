@@ -40,7 +40,7 @@ exports[`Render ExpenseList component should render ExpenseList with expenses 1`
     description="Hardware"
     id="5"
     key="5"
-    note="3D printer"
+    note="3D printer unit"
   />
 </div>
 `;

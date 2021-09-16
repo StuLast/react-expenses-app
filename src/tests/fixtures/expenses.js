@@ -32,7 +32,7 @@ const expenses = [
   {
     id: '5',
     description: "Hardware",
-    note: '3D printer',
+    note: '3D printer unit',
     amount: 22000,
     createdAt: moment(0).add(6, 'days').valueOf()
   }
