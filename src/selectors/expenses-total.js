@@ -1,6 +1,4 @@
-import { getVisibleExpenses } from './expenses';
-
-const getExpensesTotal = (visibleExpenses = []) => {
+const selectExpensesTotal = (visibleExpenses = []) => {
   if(visibleExpenses.length === 0 ) {
     return 0;
   };
@@ -9,4 +7,4 @@ const getExpensesTotal = (visibleExpenses = []) => {
     .reduce((sum, value) => sum + value, 0);
 };
 
-export { getExpensesTotal };
+export default selectExpensesTotal;
