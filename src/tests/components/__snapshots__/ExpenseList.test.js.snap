@@ -26,6 +26,22 @@ exports[`Render ExpenseList component should render ExpenseList with expenses 1`
     key="3"
     note="How much???"
   />
+  <ExpenseListItem
+    amount={20000}
+    createdAt={432000000}
+    description="Hardware"
+    id="4"
+    key="4"
+    note="Renderer Unit"
+  />
+  <ExpenseListItem
+    amount={22000}
+    createdAt={518400000}
+    description="Hardware"
+    id="5"
+    key="5"
+    note="3D printer"
+  />
 </div>
 `;
 

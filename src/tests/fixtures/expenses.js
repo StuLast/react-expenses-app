@@ -21,6 +21,20 @@ const expenses = [
     note: 'How much???',
     amount: 4500,
     createdAt: moment(0).add(4, 'days').valueOf()
+  },
+  {
+    id: '4',
+    description: "Hardware",
+    note: 'Renderer Unit',
+    amount: 20000,
+    createdAt: moment(0).add(5, 'days').valueOf()
+  },
+  {
+    id: '5',
+    description: "Hardware",
+    note: '3D printer',
+    amount: 22000,
+    createdAt: moment(0).add(6, 'days').valueOf()
   }
 ]
 

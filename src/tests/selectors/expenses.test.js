@@ -14,7 +14,7 @@ describe('get filtered data', () => {
     }
     const result = getVisibleExpenses(expenses, filters);
 
-    expect(result).toEqual([expenses[2], expenses[1]]);
+    expect(result).toEqual([expenses[4], expenses[3], expenses[2], expenses[1]]);
   });
 
   it('should filter by start date', () => {
@@ -26,7 +26,7 @@ describe('get filtered data', () => {
     }
     const result = getVisibleExpenses(expenses, filters);
 
-    expect(result).toEqual([expenses[2], expenses[0]]);
+    expect(result).toEqual([expenses[4], expenses[3], expenses[2], expenses[0]]);
   });
 
   it('should filter by end date', () => {
@@ -38,7 +38,7 @@ describe('get filtered data', () => {
     }
     const result = getVisibleExpenses(expenses, filters);
 
-    expect(result).toEqual([expenses[0], expenses[1]]);
+    expect(result).toEqual([ expenses[0], expenses[1]]);
   });
 
   it('should sort by date', () => {
@@ -50,7 +50,7 @@ describe('get filtered data', () => {
     }
     const result = getVisibleExpenses(expenses, filters);
 
-    expect(result).toEqual([expenses[2], expenses[0], expenses[1]]);
+    expect(result).toEqual([expenses[4], expenses[3], expenses[2], expenses[0], expenses[1]]);
   });
 
   it('should sort by amount', () => {
@@ -61,8 +61,7 @@ describe('get filtered data', () => {
       endDate: undefined
     }
     const result = getVisibleExpenses(expenses, filters);
-
-    expect(result).toEqual([expenses[1], expenses[2], expenses[0]]);
+    expect(result).toEqual([expenses[1], expenses[4], expenses[3], expenses[2], expenses[0]]);
   });
 
 });

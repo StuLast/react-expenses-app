@@ -54,7 +54,7 @@ describe("Remove Expenses", () => {
     };
 
     const state = expensesReducer(expenses, action);
-    expect(state).toEqual([expenses[0], expenses[2]]);
+    expect(state).toEqual([expenses[0], expenses[2], expenses[3], expenses[4]]);
   });
 
   it('should not remove expense if ID not found', () => {
