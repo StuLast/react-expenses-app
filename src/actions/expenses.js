@@ -64,9 +64,13 @@ const startEditExpense = (id, updates) => {
   return (dispatch) => {
     const dataPath = "expenses/" + id;
     const expenseRef = ref(database, dataPath);
-    return update(expenseRef, updates).then(() => {
-      dispatch(editExpense(id, updates));
-    });
+    return update(expenseRef, updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
   };
 };
 

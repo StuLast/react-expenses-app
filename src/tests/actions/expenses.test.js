@@ -150,9 +150,9 @@ describe("Generate edit expense actions", () => {
 
   it("should edit expense in database", (done) => {
     const store = createMockStore({});
-    const id = expenses[2].id;
+    const id = expenses[1].id;
     const updates = {
-      note: "Pay off outstanding balance",
+      note: "Final rent payment",
     };
     store
       .dispatch(startEditExpense(id, updates))
@@ -167,10 +167,10 @@ describe("Generate edit expense actions", () => {
       })
       .then((snapshot) => {
         expect(snapshot.val()).toEqual({
-          description: expenses[2].description,
-          note: expenses[2].note,
-          amount: expenses[2].amount,
-          createdAt: expenses[2].createdAt,
+          description: expenses[1].description,
+          note: expenses[1].note,
+          amount: expenses[1].amount,
+          createdAt: expenses[1].createdAt,
           ...updates,
         });
         done();
