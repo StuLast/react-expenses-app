@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ExpenseList component should render ExpenseList with expenses 1`] = `
+<div>
+  <ExpenseListItem
+    amount={195}
+    createdAt={0}
+    description="Gum"
+    id="1"
+    key="1"
+    note="Mmmm - Chewy"
+  />
+  <ExpenseListItem
+    amount={109500}
+    createdAt={-345600000}
+    description="Rent"
+    id="2"
+    key="2"
+    note=""
+  />
+  <ExpenseListItem
+    amount={4500}
+    createdAt={345600000}
+    description="Credit Card"
+    id="3"
+    key="3"
+    note="How much???"
+  />
+  <ExpenseListItem
+    amount={20000}
+    createdAt={432000000}
+    description="Hardware"
+    id="4"
+    key="4"
+    note="Renderer Unit"
+  />
+  <ExpenseListItem
+    amount={22000}
+    createdAt={518400000}
+    description="Hardware"
+    id="5"
+    key="5"
+    note="3D printer unit"
+  />
+</div>
+`;
+
+exports[`Render ExpenseList component should render ExpenseList with no expenses 1`] = `
+<div>
+  <p>
+    No expenses recorded yet
+  </p>
+</div>
+`;
