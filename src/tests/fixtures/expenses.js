@@ -1,41 +1,41 @@
-import moment from 'moment'
+import moment from "moment";
 
 const expenses = [
   {
-    id: '1',
+    id: "1",
     description: "Gum",
-    note: 'Mmmm - Chewy',
+    note: "Mmmm - Chewy",
     amount: 195,
-    createdAt: 0
+    createdAt: 0,
   },
   {
-    id: '2',
+    id: "2",
     description: "Rent",
-    note: '',
+    note: "1st Month Rent + Deposit",
     amount: 109500,
-    createdAt: moment(0).subtract(4, 'days').valueOf()
+    createdAt: moment(0).subtract(4, "days").valueOf(),
   },
   {
-    id: '3',
+    id: "3",
     description: "Credit Card",
-    note: 'How much???',
+    note: "How much???",
     amount: 4500,
-    createdAt: moment(0).add(4, 'days').valueOf()
+    createdAt: moment(0).add(4, "days").valueOf(),
   },
   {
-    id: '4',
+    id: "4",
     description: "Hardware",
-    note: 'Renderer Unit',
+    note: "Renderer Unit",
     amount: 20000,
-    createdAt: moment(0).add(5, 'days').valueOf()
+    createdAt: moment(0).add(5, "days").valueOf(),
   },
   {
-    id: '5',
+    id: "5",
     description: "Hardware",
-    note: '3D printer unit',
+    note: "3D printer unit",
     amount: 22000,
-    createdAt: moment(0).add(6, 'days').valueOf()
-  }
-]
+    createdAt: moment(0).add(6, "days").valueOf(),
+  },
+];
 
-export default expenses
+export default expenses;

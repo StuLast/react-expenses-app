@@ -1,6 +1,5 @@
-import { push, ref, get, remove } from "firebase/database";
+import { push, ref, get, remove, update } from "firebase/database";
 import database from "../firebase/firebase";
-
 
 //ACTIONS
 //-------
@@ -8,7 +7,7 @@ import database from "../firebase/firebase";
 //ADD_EXPENSE
 const addExpense = (expense) => ({
   type: "ADD_EXPENSE",
-  expense  
+  expense,
 });
 
 const startAddExpense = (expenseData = {}) => {
@@ -20,30 +19,34 @@ const startAddExpense = (expenseData = {}) => {
       createdAt = 0,
     } = expenseData;
 
-    const expense = {description, note, amount, createdAt};
+    const expense = { description, note, amount, createdAt };
 
-    return push(ref(database, 'expenses'), expense).then((ref) => {
-      dispatch(addExpense({
-        id: ref.key,
-        ...expense
-      }));
+    return push(ref(database, "expenses"), expense).then((ref) => {
+      dispatch(
+        addExpense({
+          id: ref.key,
+          ...expense,
+        })
+      );
     });
-  }
-}
+  };
+};
 
 //REMOVE_EXPENSE
 
-const startRemoveExpense = ({id} = {}) => {
+const startRemoveExpense = ({ id } = {}) => {
   return (dispatch) => {
     const dataPath = "expenses/" + id;
     const expensesRef = ref(database, dataPath);
     return remove(expensesRef).then(() => {
-      dispatch(removeExpense({
-        id
-      }))
+      dispatch(
+        removeExpense({
+          id,
+        })
+      );
     });
   };
-}
+};
 
 const removeExpense = ({ id } = {}) => ({
   type: "REMOVE_EXPENSE",
@@ -57,39 +60,52 @@ const editExpense = (id, updates) => ({
   updates,
 });
 
+const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    const dataPath = "expenses/" + id;
+    const expenseRef = ref(database, dataPath);
+    return update(expenseRef, updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
+  };
+};
+
 //SET_EXPENSES
 
 const startSetExpenses = () => {
-  
   return (dispatch) => {
-    const expensesRef = ref(database, 'expenses');
+    const expensesRef = ref(database, "expenses");
     return get(expensesRef).then((snapshot) => {
       const expenseArray = [];
 
       snapshot.forEach((childSnapshot) => {
         expenseArray.push({
           id: childSnapshot.key,
-          ...childSnapshot.val()
+          ...childSnapshot.val(),
         });
       });
 
       dispatch(setExpenses(expenseArray));
     });
-  }
+  };
 };
 
 const setExpenses = (expenses) => ({
   type: "SET_EXPENSES",
-  expenses
+  expenses,
 });
-
 
 export {
   addExpense,
-  startAddExpense, 
+  startAddExpense,
   setExpenses,
   startSetExpenses,
   removeExpense,
   startRemoveExpense,
-  editExpense
-}
+  editExpense,
+  startEditExpense,
+};

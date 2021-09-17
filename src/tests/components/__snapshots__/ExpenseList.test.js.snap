@@ -16,7 +16,7 @@ exports[`Render ExpenseList component should render ExpenseList with expenses 1`
     description="Rent"
     id="2"
     key="2"
-    note=""
+    note="1st Month Rent + Deposit"
   />
   <ExpenseListItem
     amount={4500}
