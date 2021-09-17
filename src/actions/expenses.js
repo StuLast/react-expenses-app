@@ -1,4 +1,4 @@
-import { push, ref, get } from "firebase/database";
+import { push, ref, get, remove } from "firebase/database";
 import database from "../firebase/firebase";
 
 
@@ -22,18 +22,29 @@ const startAddExpense = (expenseData = {}) => {
 
     const expense = {description, note, amount, createdAt};
 
-    return push(ref(database, 'expenses'), expense).then((ref)=> {
+    return push(ref(database, 'expenses'), expense).then((ref) => {
       dispatch(addExpense({
         id: ref.key,
         ...expense
       }));
-    })
+    });
   }
 }
 
-
-
 //REMOVE_EXPENSE
+
+const startRemoveExpense = ({id} = {}) => {
+  return (dispatch) => {
+    const dataPath = "expenses/" + id;
+    const expensesRef = ref(database, dataPath);
+    return remove(expensesRef).then(() => {
+      dispatch(removeExpense({
+        id
+      }))
+    });
+  };
+}
+
 const removeExpense = ({ id } = {}) => ({
   type: "REMOVE_EXPENSE",
   id,
@@ -47,10 +58,6 @@ const editExpense = (id, updates) => ({
 });
 
 //SET_EXPENSES
-const setExpenses = (expenses) => ({
-  type: "SET_EXPENSES",
-  expenses
-});
 
 const startSetExpenses = () => {
   
@@ -71,11 +78,18 @@ const startSetExpenses = () => {
   }
 };
 
+const setExpenses = (expenses) => ({
+  type: "SET_EXPENSES",
+  expenses
+});
+
+
 export {
   addExpense,
   startAddExpense, 
   setExpenses,
   startSetExpenses,
   removeExpense,
+  startRemoveExpense,
   editExpense
 }
