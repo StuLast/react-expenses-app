@@ -67,3 +67,14 @@ describe("Remove Expenses", () => {
     expect(state).toEqual(expenses);
   });
 });
+
+describe('get Expense data from database and push to state', () => {
+  it('should fetch data from database and update state', () => {
+    const action = {
+      type: "SET_EXPENSES",
+      expenses: [expenses[1]]
+    }
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual([expenses[1]]);
+  });
+});

@@ -1,14 +1,26 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import {ref, get} from 'firebase/database';
+import {ref, get, set} from 'firebase/database';
 
-import {startAddExpense, addExpense, editExpense, removeExpense} from '../../actions/expenses';
+import {startAddExpense, addExpense, editExpense, removeExpense, setExpenses, startSetExpenses} from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
+
  
 const createMockStore = configureMockStore([
   thunk
 ]);
+
+beforeEach((done) => {
+  const dbRef = ref(database, 'expenses');
+  const expensesData = {};
+  expenses.forEach(({id, description, note, amount, createdAt}) => {
+    expensesData[id] = {
+      description, note, amount, createdAt
+    }
+  })
+  set(dbRef, expensesData).then(() => done());
+});
 
 describe('Generate add expense actions', ()=> {
   it('should setup ADD_EXPENSE action object with provided values', () => {
@@ -76,33 +88,60 @@ describe('Async expense action generators', ()=> {
     });
 });
 
-describe('Generate edit expense actions', () => {
+describe('Fetch expense data from database and set redux state', () => {
 
-  it('should set up EDIT_EXPENSE action object', () => {
-    const action = editExpense('123abc', {
-      description: 'Change the description',
-      amount: 10000,
-      note: 'Change the note'
-    });
-
+  it('should setup set expense action object with data', () => {
+    const action = setExpenses(expenses);
     expect(action).toEqual({
-      type: "EDIT_EXPENSE",
-      id: '123abc',
-      updates: {
-        description: 'Change the description',
-        amount: 10000,
-        note: 'Change the note'
-      }
-    })
-  });
-});
-
-describe('Generate remove expense actions', () => {
-  it('should setup REMOVE_EXPENSE action object', () => {
-    const action = removeExpense({id: '123abc'});
-    expect(action).toEqual({
-      type: "REMOVE_EXPENSE",
-      id: '123abc'
+      type: 'SET_EXPENSES', 
+      expenses
     });
   });
+
+  it('should fetch data from database', (done) => {
+    const store = createMockStore({});
+    store.dispatch(startSetExpenses()).then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "SET_EXPENSES",
+        expenses
+      });
+      done();
+    }).catch((err) => {
+      console.log(err);
+    });
+
+  })
+
 });
+
+// describe('Generate edit expense actions', () => {
+
+//   it('should set up EDIT_EXPENSE action object', () => {
+//     const action = editExpense('123abc', {
+//       description: 'Change the description',
+//       amount: 10000,
+//       note: 'Change the note'
+//     });
+
+//     expect(action).toEqual({
+//       type: "EDIT_EXPENSE",
+//       id: '123abc',
+//       updates: {
+//         description: 'Change the description',
+//         amount: 10000,
+//         note: 'Change the note'
+//       }
+//     })
+//   });
+// });
+
+// describe('Generate remove expense actions', () => {
+//   it('should setup REMOVE_EXPENSE action object', () => {
+//     const action = removeExpense({id: '123abc'});
+//     expect(action).toEqual({
+//       type: "REMOVE_EXPENSE",
+//       id: '123abc'
+//     });
+//   });
+// });
