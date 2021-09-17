@@ -64,10 +64,10 @@
     "validator": "^13.6.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0"
+    "webpack-dev-server": "^4.0.0",
+    "firebase": "^9.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "firebase": "^9.0.2"
+    "express": "^4.17.1"
   }
 }
