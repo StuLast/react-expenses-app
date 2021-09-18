@@ -13,9 +13,9 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-const googleProvider = new GoogleAuthProvider();
+const googleAuthProvider = new GoogleAuthProvider();
 
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase();
 
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };

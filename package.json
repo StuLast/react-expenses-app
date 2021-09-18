@@ -40,6 +40,8 @@
     "dotenv": "^10.0.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
+    "firebase": "^9.0.2",
+    "history": "4.10",
     "jest": "^27.1.0",
     "mini-css-extract-plugin": "^2.3.0",
     "moment": "^2.29.1",
@@ -64,8 +66,7 @@
     "validator": "^13.6.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0",
-    "firebase": "^9.0.2"
+    "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
     "express": "^4.17.1"
