@@ -11,7 +11,8 @@ const addExpense = (expense) => ({
 });
 
 const startAddExpense = (expenseData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description = "",
       note = "",
@@ -21,7 +22,7 @@ const startAddExpense = (expenseData = {}) => {
 
     const expense = { description, note, amount, createdAt };
 
-    return push(ref(database, "expenses"), expense).then((ref) => {
+    return push(ref(database, `users/${uid}/expenses`), expense).then((ref) => {
       dispatch(
         addExpense({
           id: ref.key,
@@ -35,8 +36,9 @@ const startAddExpense = (expenseData = {}) => {
 //REMOVE_EXPENSE
 
 const startRemoveExpense = ({ id } = {}) => {
-  return (dispatch) => {
-    const dataPath = "expenses/" + id;
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const dataPath = `users/${uid}/expenses/${id}`;
     const expensesRef = ref(database, dataPath);
     return remove(expensesRef).then(() => {
       dispatch(
@@ -61,24 +63,24 @@ const editExpense = (id, updates) => ({
 });
 
 const startEditExpense = (id, updates) => {
-  return (dispatch) => {
-    const dataPath = "expenses/" + id;
-    const expenseRef = ref(database, dataPath);
-    return update(expenseRef, updates)
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const dataPath = `users/${uid}/expenses/${id}`;
+    const dataRef = ref(database, dataPath);
+    return update(dataRef, updates)
       .then(() => {
         dispatch(editExpense(id, updates));
       })
-      .catch((err) => {
-        console.log("Error: ", err);
-      });
+      .catch((err) => {});
   };
 };
 
 //SET_EXPENSES
 
 const startSetExpenses = () => {
-  return (dispatch) => {
-    const expensesRef = ref(database, "expenses");
+  return (dispatch, getAuth) => {
+    const uid = getAuth().auth.uid;
+    const expensesRef = ref(database, `users/${uid}/expenses`);
     return get(expensesRef).then((snapshot) => {
       const expenseArray = [];
 
