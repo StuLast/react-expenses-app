@@ -7,7 +7,6 @@ exports[`Header component rendering should render Header correctly 1`] = `
   </h1>
   <NavLink
     activeClassName="is-active"
-    exact={true}
     to="/dashboard"
   >
     Dashboard |
