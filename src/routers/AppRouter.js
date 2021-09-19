@@ -23,9 +23,9 @@ const AppRouter = () => (
         <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
         <PrivateRoute path="/create" component={AddExpensePage} />
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
-        <PublicRoute path="/about" component={AboutPage} />
-        <PublicRoute path="/privacy" component={PrivacyPage} />
-        <PublicRoute path="/cookies" component={CookiesPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/cookies" component={CookiesPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
