@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const CookiesPage = () => (
   <div>
@@ -38,6 +39,7 @@ export const CookiesPage = () => (
       the moment, however, this website only accepts logging in via your Google
       profile, if you have one.d
     </p>
+    <Footer />
   </div>
 );
 
