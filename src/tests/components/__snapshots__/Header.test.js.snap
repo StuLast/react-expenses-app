@@ -25,6 +25,11 @@ exports[`Header component rendering should render Header correctly 1`] = `
         Log out
       </button>
     </div>
+    <div
+      className="header__data-warning"
+    >
+      This app is only a demo app. Data and data structures may be deleted or changed without warning.
+    </div>
   </div>
 </header>
 `;
