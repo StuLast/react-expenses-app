@@ -3,28 +3,42 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => (
   <footer className="footer">
-    <div className="footer__top">
+    <div className="container footer__top ">
       <div className="footer__column">
-        <h3>Links:</h3>
-        <Link to="/about">About this demo</Link>
+        <h3 className="footer__heading">Links:</h3>
+        <Link className="footer__link" to="/about">
+          About this demo
+        </Link>
       </div>
       <div className="footer__column"></div>
       <div className="footer__column">
-        <h3>Privacy:</h3>
-        <Link to="/privacy">Privacy</Link>
-        <Link to="/cookies">Cookies</Link>
+        <h3 className="footer__heading">Privacy:</h3>
+        <Link className="footer__link" to="/privacy">
+          Privacy
+        </Link>
+        <Link className="footer__link" to="/cookies">
+          Cookies
+        </Link>
       </div>
     </div>
-    <div className="footer__bottom">
+    <div className="container footer__bottom">
       <div>
-        Powered by:
-        <Link to="https://spycedconcepts.uk" target="_blank">
+        Powered by{" "}
+        <a
+          className="footer__link"
+          href="https://spycedconcepts.uk"
+          target="_blank"
+        >
           Spyced Concepts
-        </Link>
-        . Programmed by:
-        <Link href="https://stulast.co.uk" target="_blank">
+        </a>
+        . Programmed by{" "}
+        <a
+          className="footer__link"
+          href="https://stulast.co.uk"
+          target="_blank"
+        >
           Stu Last
-        </Link>
+        </a>
       </div>
     </div>
   </footer>
