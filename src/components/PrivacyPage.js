@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const PrivacyPage = () => (
   <div>
-    <h1>About Page</h1>
+    <h1>Privacy Page</h1>
   </div>
 );
 
