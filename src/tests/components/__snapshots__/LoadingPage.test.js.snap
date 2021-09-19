@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Loading Page: should render the Loading page correctly 1`] = `
+<div
+  className="loader"
+>
+  <img
+    alt="loading screen animation"
+    className="loader__image"
+    src="/images/loader.gif"
+  />
+  <div>
+    Loading...
+  </div>
+</div>
+`;
