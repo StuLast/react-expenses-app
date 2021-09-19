@@ -15,6 +15,10 @@ export const Header = ({ startLogout }) => (
           Log out
         </button>
       </div>
+      <div className="header__data-warning">
+        This app is only a demo app. Data and data structures may be deleted or
+        changed without warning.
+      </div>
     </div>
   </header>
 );

@@ -10,6 +10,9 @@ const LoginPage = ({ startLogin }) => (
       <button className="button" onClick={startLogin}>
         Log In with Google
       </button>
+      <Link className="small-link" to="/about">
+        about this site ...
+      </Link>
     </div>
   </div>
 );
