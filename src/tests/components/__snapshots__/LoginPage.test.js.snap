@@ -21,6 +21,28 @@ exports[`Render Login Page: should render the login page correctly 1`] = `
     >
       Log In with Google
     </button>
+    <div>
+      <Link
+        className="small-link"
+        to="/about"
+      >
+        about
+      </Link>
+       - 
+      <Link
+        className="small-link"
+        to="/privacy"
+      >
+        privacy
+      </Link>
+       - 
+      <Link
+        className="small-link"
+        to="/cookies"
+      >
+        cookies
+      </Link>
+    </div>
   </div>
 </div>
 `;

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { startLogin } from "../actions/auth";
 
 const LoginPage = ({ startLogin }) => (
@@ -10,6 +11,19 @@ const LoginPage = ({ startLogin }) => (
       <button className="button" onClick={startLogin}>
         Log In with Google
       </button>
+      <div>
+        <Link className="small-link" to="/about">
+          about
+        </Link>
+        {" - "}
+        <Link className="small-link" to="/privacy">
+          privacy
+        </Link>
+        {" - "}
+        <Link className="small-link" to="/cookies">
+          cookies
+        </Link>
+      </div>
     </div>
   </div>
 );
