@@ -26,6 +26,10 @@ React.js Indecision App Demo
 ```npm test -- --watch --verbose``` - for automated testing whilst developing but with each test listed in output
 ```npm test``` - for one-off testing and CI/CD pipelines
 
+## Live Demo
+
+You can see a live version of this demo on <a href="http://react-expensologist-demo-app.herokuapp.com/dashboard." target="_blank">http://react-expensologist-demo-app.herokuapp.com/dashboard</a>.  It's important to note that this is a demo app only.  Data is not persisted for any length of time and is frequently cleared out or overwritten.
+
 ## License
 
 This app is currently covered by a limited use license.  Visit <a href="/react-expenses-app/LICENSE.md"> docs/LICENSE.md </a> for more info.
