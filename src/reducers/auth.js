@@ -1,13 +1,13 @@
-//AUTHENTICATION REDUCER
+import { LOGIN, LOGOUT } from '../actions/types'
 
 const authReducerDefaultState = {};
 
 const authReducer = (state = authReducerDefaultState, action) => {
   switch (action.type) {
-    case "LOGIN":
+    case LOGIN:
       return { uid: action.uid };
       break;
-    case "LOGOUT":
+    case LOGOUT:
       return {};
       break;
     default:
