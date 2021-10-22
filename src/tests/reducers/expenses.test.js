@@ -1,5 +1,6 @@
 import expensesReducer from '../../reducers/expenses';
 import expenses from '../fixtures/expenses';
+import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSE } from "../actions/types";
 
 describe('Reducer Setup', () => {
 
@@ -10,7 +11,7 @@ describe('Reducer Setup', () => {
 
 });
 
-describe('Adding expenses', () =>  {
+describe('Adding expenses', () => {
 
   it('should add an expense', () => {
     const expense = {
@@ -20,7 +21,7 @@ describe('Adding expenses', () =>  {
       amount: 479500,
       createdAt: 20000
     }
-    const action = {type: "ADD_EXPENSE", expense}
+    const action = { type: ADD_EXPENSE, expense }
     const state = expensesReducer(expenses, action);
 
     expect(state).toEqual([...expenses, expense]);
@@ -31,15 +32,15 @@ describe('Adding expenses', () =>  {
 describe("Editing Expenses", () => {
 
   it('should edit an expense', () => {
-    const updates = { description: "Vehicle Rental",}
-    const action = {type: "EDIT_EXPENSE", id: expenses[1].id, updates};
+    const updates = { description: "Vehicle Rental", }
+    const action = { type: EDIT_EXPENSE, id: expenses[1].id, updates };
     const state = expensesReducer(expenses, action);
     expect(state[1].description).toBe(updates.description);
   });
 
   it('should not edit an expense if expense not found', () => {
-    const updates = { description: "Vehicle Rental",}
-    const action = {type: "EDIT_EXPENSE", id: -1, updates};
+    const updates = { description: "Vehicle Rental", }
+    const action = { type: EDIT_EXPENSE, id: -1, updates };
     const state = expensesReducer(expenses, action);
     expect(state).toEqual(expenses);
   });
@@ -49,7 +50,7 @@ describe("Remove Expenses", () => {
 
   it('should remove expense by ID', () => {
     const action = {
-      type: "REMOVE_EXPENSE",
+      type: REMOVE_EXPENSE,
       id: expenses[1].id
     };
 
@@ -59,7 +60,7 @@ describe("Remove Expenses", () => {
 
   it('should not remove expense if ID not found', () => {
     const action = {
-      type: "REMOVE_EXPENSE",
+      type: REMOVE_EXPENSE,
       id: 'Brian'
     };
 
@@ -71,7 +72,7 @@ describe("Remove Expenses", () => {
 describe('get Expense data from database and push to state', () => {
   it('should fetch data from database and update state', () => {
     const action = {
-      type: "SET_EXPENSES",
+      type: SET_EXPENSESc,
       expenses: [expenses[1]]
     }
     const state = expensesReducer(expenses, action);

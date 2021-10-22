@@ -1,12 +1,13 @@
 import { push, ref, get, remove, update } from "firebase/database";
 import database from "../firebase/firebase";
+import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSE } from "./types";
 
 //ACTIONS
 //-------
 
 //ADD_EXPENSE
 const addExpense = (expense) => ({
-  type: "ADD_EXPENSE",
+  type: ADD_EXPENSE,
   expense,
 });
 
@@ -51,13 +52,13 @@ const startRemoveExpense = ({ id } = {}) => {
 };
 
 const removeExpense = ({ id } = {}) => ({
-  type: "REMOVE_EXPENSE",
+  type: REMOVE_EXPENSE,
   id,
 });
 
 //EDIT_EXPENSE
 const editExpense = (id, updates) => ({
-  type: "EDIT_EXPENSE",
+  type: EDIT_EXPENSE,
   id,
   updates,
 });
@@ -71,7 +72,7 @@ const startEditExpense = (id, updates) => {
       .then(() => {
         dispatch(editExpense(id, updates));
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 };
 
@@ -97,7 +98,7 @@ const startSetExpenses = () => {
 };
 
 const setExpenses = (expenses) => ({
-  type: "SET_EXPENSES",
+  type: SET_EXPENSES,
   expenses,
 });
 

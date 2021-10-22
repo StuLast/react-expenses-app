@@ -1,8 +1,9 @@
 import { googleAuthProvider } from "../firebase/firebase";
 import { getAuth, signInWithPopup, signOut } from "firebase/auth";
+import { LOGIN, LOGOUT } from "./types";
 
 const logIn = (uid) => ({
-  type: "LOGIN",
+  type: LOGIN,
   uid,
 });
 
@@ -10,13 +11,13 @@ const startLogin = () => {
   return () => {
     const auth = getAuth();
     return signInWithPopup(auth, googleAuthProvider)
-      .then(() => {})
-      .catch((err) => {});
+      .then(() => { })
+      .catch((err) => { });
   };
 };
 
 const logOut = () => ({
-  type: "LOGOUT",
+  type: LOGOUT,
 });
 
 const startLogout = () => {
@@ -26,7 +27,7 @@ const startLogout = () => {
       .then(() => {
         logOut();
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 };
 

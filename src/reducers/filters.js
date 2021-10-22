@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { SET_TEXT_FILTER, SET_START_DATE, SET_END_DATE, SORT_BY } from '../actions/types'
 
 //FILTERS REDUCER
 //---------------
@@ -12,13 +13,13 @@ const filtersReducerDefaultState = {
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
   switch (action.type) {
-    case "SET_TEXT_FILTER":
+    case SET_TEXT_FILTER:
       return { ...state, text: action.text };
-    case "SORT_BY":
+    case SORT_BY:
       return { ...state, sortBy: action.sortBy };
-    case "SET_START_DATE":
+    case SET_START_DATE:
       return { ...state, startDate: action.startDate };
-    case "SET_END_DATE":
+    case SET_END_DATE:
       return { ...state, endDate: action.endDate };
     default:
       return state;
