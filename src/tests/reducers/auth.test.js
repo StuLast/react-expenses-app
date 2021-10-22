@@ -1,6 +1,6 @@
 import authReducer from "../../reducers/auth";
 import auth from "../fixtures/auth";
-import { LOGIN, LOGOUT } from "../actions/types";
+import { LOGIN, LOGOUT } from "../../actions/types";
 
 describe("Auth reducer setup", () => {
   it("should setup the auth reducer correctly", () => {

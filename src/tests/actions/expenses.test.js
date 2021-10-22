@@ -19,7 +19,7 @@ const uid = "testUID";
 const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
-beforeEach((done) => {
+beforeEach(() => {
   const dbRef = ref(database, `users/${uid}/expenses`);
   const expensesData = {};
   expenses.forEach(({ id, description, note, amount, createdAt }) => {
@@ -30,7 +30,7 @@ beforeEach((done) => {
       createdAt,
     };
   });
-  set(dbRef, expensesData).then(() => done());
+  set(dbRef, expensesData).then();
 });
 
 describe("Generate add expense actions", () => {

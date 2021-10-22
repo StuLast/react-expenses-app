@@ -1,4 +1,4 @@
-import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSES } from "./types";
+import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSES } from "../actions/types";
 
 const expensesReducerDefaultState = [];
 

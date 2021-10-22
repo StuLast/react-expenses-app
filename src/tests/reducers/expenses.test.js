@@ -1,6 +1,6 @@
 import expensesReducer from '../../reducers/expenses';
 import expenses from '../fixtures/expenses';
-import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSE } from "../actions/types";
+import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSES } from "../../actions/types";
 
 describe('Reducer Setup', () => {
 
@@ -72,7 +72,7 @@ describe("Remove Expenses", () => {
 describe('get Expense data from database and push to state', () => {
   it('should fetch data from database and update state', () => {
     const action = {
-      type: SET_EXPENSESc,
+      type: SET_EXPENSES,
       expenses: [expenses[1]]
     }
     const state = expensesReducer(expenses, action);
