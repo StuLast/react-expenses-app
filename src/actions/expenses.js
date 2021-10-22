@@ -1,6 +1,6 @@
 import { push, ref, get, remove, update } from "firebase/database";
 import database from "../firebase/firebase";
-import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSE } from "./types";
+import { ADD_EXPENSE, REMOVE_EXPENSE, EDIT_EXPENSE, SET_EXPENSES } from "./types";
 
 //ACTIONS
 //-------
